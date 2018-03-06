@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-title>{{ 'ARTICLE_EDIT_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item-group>
+
+      <ion-item-divider sticky>
+          <ion-label>
+              Article edit entry :
+          </ion-label>
+      </ion-item-divider>
+      <ion-item>
+          <ion-label>
+              intitule :
+          </ion-label>
+          <ion-input [(ngModel)]="item.intitule" type="string"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>
+              nombre :
+          </ion-label>
+        <ion-input [(ngModel)]="item.nombre" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          client :
+        </ion-label>
+        <ion-select [(ngModel)]="client_id">
+          <ion-option *ngFor="let itemElt of clients" value="{{itemElt.id || item.client.id}}">{{itemElt.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+  </ion-item-group>
+  <button ion-button block (click)="close()"> Edit </button>
+  <button ion-button block color="danger" (click)="cancel()">Cancel</button>
+
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-title>{{ 'CLIENT_EDIT_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item-group>
+
+      <ion-item-divider sticky>
+          <ion-label>
+              Client edit entry :
+          </ion-label>
+      </ion-item-divider>
+      <ion-item>
+          <ion-label>
+              name :
+          </ion-label>
+          <ion-input [(ngModel)]="item.name" type="string"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>
+              age :
+          </ion-label>
+        <ion-input [(ngModel)]="item.age" type="number"></ion-input>
+    </ion-item>
+  </ion-item-group>
+  <button ion-button block (click)="close()"> Edit </button>
+  <button ion-button block color="danger" (click)="cancel()">Cancel</button>
+
+</ion-content>

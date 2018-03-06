@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ArticleListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>{{ 'LIST_ARTICLE_TITLE' | translate }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addArticle()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of currentArticles">
+      <button ion-item (click)="openArticle(item)">
+        <ion-avatar item-start>
+            <img [src]="articleIcon" />
+        </ion-avatar>
+        <h2>{{item.intitule}}</h2>
+        <p>{{item.nombre}}</p>
+        <ion-note item-end *ngIf="item.client">{{item.client.name}}</ion-note>
+      </button>
+
+      <ion-item-options>
+        <button ion-button color="info" (click)="updateArticle(item)">
+          {{ 'UPDATE_BUTTON' | translate }}
+        </button>
+        <button ion-button color="danger" (click)="deleteArticle(item)">
+            {{ 'DELETE_BUTTON' | translate }}
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

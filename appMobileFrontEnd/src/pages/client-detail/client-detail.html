@@ -1,0 +1,53 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ item.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<!-- <ion-content>
+   <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + clientIcon + ')'"> 
+  </div>
+
+  <div class="item-detail" padding>
+    <h2>{{item.name}}</h2>
+    <p>{{item.age}}</p>
+  </div>
+</ion-content>
+ -->
+
+<ion-content class="client-detail">
+  <ion-list>
+      <ion-card>
+          <ion-item *ngIf="item">
+              <ion-avatar item-start>
+                  <img [src]="clientIcon">
+              </ion-avatar>
+              <h2>{{item.name}}</h2>
+              <p>{{item.age}}</p>
+              <ion-note item-end >{{item.articles.length}}</ion-note> 
+            </ion-item>
+      </ion-card>
+  </ion-list>
+  <ion-list>
+    <ion-item-sliding *ngFor="let article of item.articles">
+      <button ion-item >
+        <ion-avatar item-start>
+            <img [src]="articleIcon" />
+        </ion-avatar>
+        <h2>{{article.intitule}}</h2>
+        <p>{{article.nombre}}</p>
+      </button>
+    </ion-item-sliding>
+  </ion-list>
+  <!-- <ion-fab bottom right>
+      <button ion-fab (click)="addObjectif()"><ion-icon name="chatboxes" class="icon-white"></ion-icon></button>
+  </ion-fab> -->
+</ion-content>
+
+
+
+

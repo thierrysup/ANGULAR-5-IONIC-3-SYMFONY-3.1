@@ -1,0 +1,22 @@
+page-article-detail {
+    .item-profile {
+        width: 100%;
+        background-position: center center;
+        background-size: cover;
+        height: 250px;
+      }
+    
+      .item-detail {
+        width: 100%;
+        background: white;
+        position: absolute;
+      }
+      .article-detail img {
+        max-width: 140px;
+        border-radius: 50%;
+      }
+      
+      .article-detail p {
+        color: #60646B;
+      }
+}
