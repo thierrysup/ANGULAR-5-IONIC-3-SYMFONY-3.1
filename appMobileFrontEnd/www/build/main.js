@@ -42,23 +42,23 @@ var map = {
 		16
 	],
 	"../pages/client-create/client-create.module": [
-		442,
+		446,
 		15
 	],
 	"../pages/client-detail/client-detail.module": [
-		443,
+		442,
 		14
 	],
 	"../pages/client-edit/client-edit.module": [
-		444,
+		443,
 		13
 	],
 	"../pages/client-list/client-list.module": [
-		445,
+		444,
 		12
 	],
 	"../pages/content/content.module": [
-		446,
+		445,
 		11
 	],
 	"../pages/item-create/item-create.module": [
@@ -514,11 +514,11 @@ var AppModule = (function () {
                         { loadChildren: '../pages/article-edit/article-edit.module#ArticleEditPageModule', name: 'ArticleEditPage', segment: 'article-edit', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/article-list/article-list.module#ArticleListPageModule', name: 'ArticleListPage', segment: 'article-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cards/cards.module#CardsPageModule', name: 'CardsPage', segment: 'cards', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/client-create/client-create.module#ClientCreatePageModule', name: 'ClientCreatePage', segment: 'client-create', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/client-detail/client-detail.module#ClientDetailPageModule', name: 'ClientDetailPage', segment: 'client-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/client-edit/client-edit.module#ClientEditPageModule', name: 'ClientEditPage', segment: 'client-edit', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/client-list/client-list.module#ClientListPageModule', name: 'ClientListPage', segment: 'client-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/content/content.module#ContentPageModule', name: 'ContentPage', segment: 'content', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/client-create/client-create.module#ClientCreatePageModule', name: 'ClientCreatePage', segment: 'client-create', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/item-create/item-create.module#ItemCreatePageModule', name: 'ItemCreatePage', segment: 'item-create', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/item-detail/item-detail.module#ItemDetailPageModule', name: 'ItemDetailPage', segment: 'item-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/list-master/list-master.module#ListMasterPageModule', name: 'ListMasterPage', segment: 'list-master', priority: 'low', defaultHistory: [] },
@@ -728,18 +728,18 @@ var User = (function () {
      * the user entered on the form.
      */
     User.prototype.login = function (accountInfo) {
-        /* let seq = this.api.post('login', accountInfo).share();
-    
-        seq.subscribe((res: any) => {
-          // If the API returned a successful response, mark the user as logged in
-          if (res.status == 'success') {
-            this._loggedIn(res);
-          } else {
-          }
-        }, err => {
-          console.error('ERROR', err);
+        var _this = this;
+        var seq = this.api.loginAndSignup('login', accountInfo).share();
+        seq.subscribe(function (res) {
+            // If the API returned a successful response, mark the user as logged in
+            if (res.status == 'success') {
+                _this._loggedIn(res);
+            }
+            else {
+            }
+        }, function (err) {
+            console.error('ERROR', err);
         });
-     */
         return null;
     };
     /**
@@ -747,17 +747,16 @@ var User = (function () {
      * the user entered on the form.
      */
     User.prototype.signup = function (accountInfo) {
-        /* let seq = this.api.post('signup', accountInfo).share();
-    
-        seq.subscribe((res: any) => {
-          // If the API returned a successful response, mark the user as logged in
-          if (res.status == 'success') {
-            this._loggedIn(res);
-          }
-        }, err => {
-          console.error('ERROR', err);
+        var _this = this;
+        var seq = this.api.loginAndSignup('signup', accountInfo).share();
+        seq.subscribe(function (res) {
+            // If the API returned a successful response, mark the user as logged in
+            if (res.status == 'success') {
+                _this._loggedIn(res);
+            }
+        }, function (err) {
+            console.error('ERROR', err);
         });
-     */
         return null;
     };
     /**
@@ -994,6 +993,12 @@ var Api = (function () {
         var _this = this;
         var url = "" + this.baseUrl + endpoint + "/new";
         return this.http.post(url, Item, httpOptions).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["tap"])(function (Item) { return _this.log("added " + endpoint + " w/ id=" + Item.id); }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError("add" + endpoint)));
+    };
+    /** POST: signup or loggin  a new User  to the server */
+    Api.prototype.loginAndSignup = function (endpoint, body) {
+        var _this = this;
+        var url = "" + this.baseUrl + endpoint + "/";
+        return this.http.post(url, body, httpOptions).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["tap"])(function (Item) { return _this.log("user " + endpoint + " w/ id=" + Item.id); }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError("user " + endpoint)));
     };
     /** DELETE: delete the Item from the server */
     Api.prototype.deleteItem = function (endpoint, id) {
