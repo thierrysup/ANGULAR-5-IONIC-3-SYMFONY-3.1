@@ -22,11 +22,11 @@ webpackEmptyAsyncContext.id = 149;
 
 var map = {
 	"../pages/article-create/article-create.module": [
-		437,
+		438,
 		20
 	],
 	"../pages/article-detail/article-detail.module": [
-		438,
+		437,
 		19
 	],
 	"../pages/article-edit/article-edit.module": [
@@ -34,27 +34,27 @@ var map = {
 		18
 	],
 	"../pages/article-list/article-list.module": [
-		440,
+		443,
 		17
 	],
 	"../pages/cards/cards.module": [
-		441,
+		440,
 		16
 	],
 	"../pages/client-create/client-create.module": [
-		446,
+		441,
 		15
 	],
 	"../pages/client-detail/client-detail.module": [
-		442,
+		444,
 		14
 	],
 	"../pages/client-edit/client-edit.module": [
-		443,
+		442,
 		13
 	],
 	"../pages/client-list/client-list.module": [
-		444,
+		448,
 		12
 	],
 	"../pages/content/content.module": [
@@ -62,11 +62,11 @@ var map = {
 		11
 	],
 	"../pages/item-create/item-create.module": [
-		447,
+		446,
 		10
 	],
 	"../pages/item-detail/item-detail.module": [
-		448,
+		447,
 		9
 	],
 	"../pages/list-master/list-master.module": [
@@ -509,18 +509,18 @@ var AppModule = (function () {
                 }),
                 __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/article-create/article-create.module#ArticleCreatePageModule', name: 'ArticleCreatePage', segment: 'article-create', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/article-detail/article-detail.module#ArticleDetailPageModule', name: 'ArticleDetailPage', segment: 'article-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/article-create/article-create.module#ArticleCreatePageModule', name: 'ArticleCreatePage', segment: 'article-create', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/article-edit/article-edit.module#ArticleEditPageModule', name: 'ArticleEditPage', segment: 'article-edit', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/article-list/article-list.module#ArticleListPageModule', name: 'ArticleListPage', segment: 'article-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cards/cards.module#CardsPageModule', name: 'CardsPage', segment: 'cards', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/client-detail/client-detail.module#ClientDetailPageModule', name: 'ClientDetailPage', segment: 'client-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/client-edit/client-edit.module#ClientEditPageModule', name: 'ClientEditPage', segment: 'client-edit', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/client-list/client-list.module#ClientListPageModule', name: 'ClientListPage', segment: 'client-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/content/content.module#ContentPageModule', name: 'ContentPage', segment: 'content', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/client-create/client-create.module#ClientCreatePageModule', name: 'ClientCreatePage', segment: 'client-create', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/client-edit/client-edit.module#ClientEditPageModule', name: 'ClientEditPage', segment: 'client-edit', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/article-list/article-list.module#ArticleListPageModule', name: 'ArticleListPage', segment: 'article-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/client-detail/client-detail.module#ClientDetailPageModule', name: 'ClientDetailPage', segment: 'client-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/content/content.module#ContentPageModule', name: 'ContentPage', segment: 'content', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/item-create/item-create.module#ItemCreatePageModule', name: 'ItemCreatePage', segment: 'item-create', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/item-detail/item-detail.module#ItemDetailPageModule', name: 'ItemDetailPage', segment: 'item-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/client-list/client-list.module#ClientListPageModule', name: 'ClientListPage', segment: 'client-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/list-master/list-master.module#ListMasterPageModule', name: 'ListMasterPage', segment: 'list-master', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },

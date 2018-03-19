@@ -31,12 +31,7 @@ export const appRoutes: Routes = [
           {path: 'articles', component: ArticleListComponent, data: { title: 'Article List'}},
           {path: '', redirectTo: '/home/clients', pathMatch: 'full' }
         ]
-    }/* ,
-    {
-        path: 'clients',
-        component: ClientListComponent,
-        data: { title: 'Client List' }
-    } */,
+    },
     {
         path: 'logs',
         component: MessagesComponent,
@@ -56,12 +51,7 @@ export const appRoutes: Routes = [
         path: 'client-edit/:id',
         component: ClientEditComponent,
         data: { title: 'Edit Client' }
-      }/* ,
-      {
-        path: 'articles',
-        component: ArticleListComponent,
-        data: { title: 'Article List' }
-      } */,
+      },
       {
         path: 'article-details/:id',
         component: ArticleDetailComponent,
